@@ -18,12 +18,16 @@ function Tos() {
 
     if (tosConfirmed) {
       tg.MainButton.enable();
+      tg.MainButton.color = tg.themeParams.button_color;
+      tg.MainButton.textColor = tg.themeParams.button_text_color;
     } else {
       tg.MainButton.disable();
+      tg.MainButton.color = tg.themeParams.hint_color;
+      tg.MainButton.textColor = tg.themeParams.button_text_color;
     }
     tg.MainButton.onClick(onClose);
 
-  }, [tg, tosConfirmed]);
+  }, [tg, tosConfirmed, onClose]);
 
   return (
     <div className="App">
