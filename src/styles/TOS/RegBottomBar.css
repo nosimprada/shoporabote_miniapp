@@ -5,13 +5,14 @@
   right: 0;
   width: 100%;
   padding: 0 16px;
-  background-color: var(--tg-theme-bottom-bar-bg-color);
+  background-color: var(--tg-theme-bg-color);
 }
 
 /* Кастомный чекбокс */
 .checkbox-container {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 12px;
   cursor: pointer;
   margin-top: 16px;
