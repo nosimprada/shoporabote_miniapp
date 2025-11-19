@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTelegram } from "../hooks/useTelegram";
 import { useRegState } from "../hooks/useRegState";
-import { useEffect } from "react";
 
 function RegBottomBar() {
   const { tg } = useTelegram();
