@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useTelegram } from './hooks/useTelegram';
 import './App.css';
 
 function App() {
+  const { tg, user, onClose } = useTelegram();
+
+  useEffect(() => {
+    tg.ready();
+    if (!tg.isFullscreen) {
+      tg.requestFullscreen();
+    }
+  }, [tg]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span>{user?.username}</span>
+      <button className="element" onClick={onClose}>Close Telegram WebApp</button>
     </div>
   );
 }
