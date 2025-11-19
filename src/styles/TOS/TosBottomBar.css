@@ -1,0 +1,61 @@
+.tos-bottom-bar {
+  position: sticky;
+  bottom: 0;
+}
+
+/* Кастомный чекбокс */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: var(--tg-theme-bg-color, #fff);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-container:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-custom {
+  position: relative;
+  min-width: 24px;
+  height: 24px;
+  background-color: var(--tg-theme-bg-color, #fff);
+  border: 2px solid var(--tg-theme-hint-color, #ccc);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+  background-color: var(--tg-theme-button-color, #2481cc);
+  border-color: var(--tg-theme-button-color, #2481cc);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--tg-theme-text-color, #000);
+}

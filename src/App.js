@@ -1,10 +1,10 @@
 import './App.css';
-import Tos from './components/TOS/Tos';
+import RegistrationPage from './components/RegistrationPage';
 
 function App() {
   return (
     <div className="App">
-      <Tos />
+      <RegistrationPage />
     </div>
   );
 }

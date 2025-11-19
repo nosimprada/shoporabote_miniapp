@@ -1,22 +1,17 @@
 import {React, useState, useEffect} from "react";
 import { useTelegram } from "../../hooks/useTelegram";
+import TosBottomBar from "../RegBottomBar";
+import { useRegState } from "../../hooks/useRegState";
 
 function Tos() {
-  const { tg, user, onClose } = useTelegram();
-  const [tosConfirmed, setTosConfirmed] = useState(false);
+  const { tg } = useTelegram();
+  const { isAgreed, setIsAgreed, step, setStep } = useRegState();
 
   useEffect(() => {
-    tg.ready();
-    if (!tg.isFullscreen) {
-      tg.requestFullscreen();
-    }
-    tg.expand();
-    tg.disableVerticalSwipes();
-    tg.enableClosingConfirmation();
     tg.MainButton.show();
     tg.MainButton.setText('Продолжить');
 
-    if (tosConfirmed) {
+    if (isAgreed) {
       tg.MainButton.enable();
       tg.MainButton.color = tg.themeParams.button_color;
       tg.MainButton.textColor = tg.themeParams.button_text_color;
@@ -25,16 +20,17 @@ function Tos() {
       tg.MainButton.color = tg.themeParams.hint_color;
       tg.MainButton.textColor = tg.themeParams.button_text_color;
     }
-    tg.MainButton.onClick(onClose);
+    const handleMainButtonClick = () => setStep(step + 1);
+    tg.MainButton.onClick(handleMainButtonClick);
 
-  }, [tg, tosConfirmed, onClose]);
+    return () => {
+      tg.MainButton.offClick(handleMainButtonClick);
+    };
+  }, [tg, isAgreed, step, setStep]);
 
   return (
-    <div className="App">
-      <span>{user?.username}</span>
-      <button onClick={() => setTosConfirmed(!tosConfirmed)}>
-        {tosConfirmed ? "Отменить" : "Подтвердить"}
-      </button>
+    <div>
+      
     </div>
   );
 }
