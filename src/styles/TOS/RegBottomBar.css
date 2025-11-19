@@ -18,7 +18,7 @@
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 12px;
-  background-color: var(--tg-theme-bg-color, #fff);
+  background-color: var(--tg-theme-bg-color);
   border-radius: 12px;
   transition: all 0.2s ease;
 }
@@ -64,4 +64,5 @@
   font-size: 14px;
   line-height: 1.5;
   color: var(--tg-theme-text-color, #000);
+  background-color: var(--tg-theme-bg-color);
 }
