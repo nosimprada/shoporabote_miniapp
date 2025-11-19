@@ -23,7 +23,7 @@ function Tos() {
     }
     tg.MainButton.onClick(onClose);
 
-  }, [tg]);
+  }, [tg, tosConfirmed]);
 
   return (
     <div className="App">
