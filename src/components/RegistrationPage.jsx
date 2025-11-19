@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTelegram } from "../hooks/useTelegram";
 import Tos from "./TOS/Tos";
-import './RegistrationPage.css';
+import '../styles/RegistrationPage.css';
 import { useRegState } from "../hooks/useRegState";
 import RegBottomBar from "./RegBottomBar";
 
