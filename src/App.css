@@ -2,8 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: var(--tg-theme-text-color);
+  background-color: var(--tg-theme-bg-color);
+  font-family: Arial, sans-serif;
 }
 
 .App {
-  font-family: Arial, sans-serif;
+  margin-top: calc(var(--tg-safe-area-inset-top) + var(--tg-content-safe-area-inset-top));
 }
