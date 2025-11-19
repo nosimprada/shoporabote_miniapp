@@ -10,12 +10,19 @@ function App() {
     if (!tg.isFullscreen) {
       tg.requestFullscreen();
     }
+    tg.expand();
+    tg.disableVerticalSwipes();
+
+    tg.MainButton.setParams({
+      text: 'Закрыть'
+    });
+    tg.MainButton.onClick(onClose);
+    tg.MainButton.show();
   }, [tg]);
 
   return (
     <div className="App">
       <span>{user?.username}</span>
-      <button className="element" onClick={onClose}>Close Telegram WebApp</button>
     </div>
   );
 }
