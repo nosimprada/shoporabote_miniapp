@@ -12,6 +12,7 @@ function App() {
     }
     tg.expand();
     tg.disableVerticalSwipes();
+    tg.enableClosingConfirmation();
 
     tg.MainButton.setParams({
       text: 'Закрыть'
