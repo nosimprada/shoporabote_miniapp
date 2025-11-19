@@ -1,5 +1,5 @@
 .tos-bottom-bar {
-  position: sticky;
+  position: fixed;
   bottom: 0;
 }
 
