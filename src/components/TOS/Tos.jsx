@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import { useTelegram } from "../../hooks/useTelegram";
 import TosBottomBar from "../RegBottomBar";
 import { useRegState } from "../../hooks/useRegState";
+import HeaderTOS from "./HeaderTOS";
 
 function Tos() {
   const { tg } = useTelegram();
@@ -30,7 +31,7 @@ function Tos() {
 
   return (
     <div>
-      
+      <HeaderTOS />
     </div>
   );
 }

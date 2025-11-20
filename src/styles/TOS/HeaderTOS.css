@@ -1,0 +1,15 @@
+.header-tos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--tg-theme-bg-color);
+  z-index: 1000;
+}
+
+.header-tos-title {
+  padding: 16px;
+  text-align: center;
+  color: var(--tg-theme-accent-text-color);
+}
