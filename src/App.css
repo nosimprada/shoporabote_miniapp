@@ -5,6 +5,11 @@
   color: var(--tg-theme-text-color);
   background-color: var(--tg-theme-bg-color);
   font-family: Arial, sans-serif;
+  user-select: none; /* Запрещаем выделение */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  -webkit-touch-callout: none; /* iOS Safari */
 }
 
 .App {
