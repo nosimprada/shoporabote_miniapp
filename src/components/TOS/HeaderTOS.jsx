@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../styles/TOS/HeaderTOS.css';
+import '../../styles/TOS/HeaderTOS.css';
 
 function HeaderTOS() {
   return (
