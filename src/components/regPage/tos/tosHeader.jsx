@@ -1,5 +1,4 @@
 import React from "react";
-import {useEffect} from "react";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
 
 function TosHeader() {
@@ -8,7 +7,8 @@ function TosHeader() {
         <nav className="navbar fixed-top" style={{
             paddingTop: "calc(var(--tg-safe-area-inset-top) + var(--tg-content-safe-area-inset-top))",
             backgroundColor: "var(--tg-theme-bg-color)",
-            borderBottom: "1px solid var(--tg-theme-hint-color)"
+            borderBottom: "1px solid var(--tg-theme-hint-color)",
+            zIndex: 1000
             }}>
             <div className="col text-center">
                 <Logo 
