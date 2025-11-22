@@ -7,7 +7,8 @@ function TosHeader() {
     <div>
         <nav className="navbar fixed-top" style={{
             paddingTop: "calc(var(--tg-safe-area-inset-top) + var(--tg-content-safe-area-inset-top))",
-            backgroundColor: "var(--tg-theme-bg-color)"
+            backgroundColor: "var(--tg-theme-bg-color)",
+            borderBottom: "1px solid var(--tg-theme-hint-color)"
             }}>
             <div className="col text-center">
                 <Logo 
