@@ -1,7 +1,16 @@
 import React from "react";
+import {useEffect} from "react";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
+import { useTelegram } from "../../../hooks/useTelegram";
 
 function TosHeader() {
+    const { tg } = useTelegram();
+    useEffect(() => {
+        tg.expand();
+        tg.MainButton.show();
+        tg.setBottomBarColor(tg.themeParams.bg_color);
+    }, [tg]);
+
   return (
     <div>
         <nav className="navbar fixed-top" style={{
@@ -19,7 +28,6 @@ function TosHeader() {
             <span className='text-wrap fw-bold' style={{color: "var(--tg-theme-text-color)"}}>Пользовательское соглашение</span>
             <i className="bi bi-info-square-fill" style={{color: "var(--tg-theme-text-color)", marginLeft: "8px"}}></i>
             </div>
-            <div style={{height: "5px", width: "100%", backgroundColor: "var(--tg-theme-secondary-bg-color)"}}></div>
         </nav>
     </div>
     );
