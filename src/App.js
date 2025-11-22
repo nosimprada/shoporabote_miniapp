@@ -8,9 +8,7 @@ function App() {
         <div className="container-fluid justify-content-center">
           <h2 className="badge text-bg-secondary text-wrap text-center" 
           style={{marginRight: 0, 
-                  marginBottom: 0,
-                  color: "var(--tg-theme-text-color)",
-                  backgroundColor: "var(--tg-theme-bg-color)"}}>Пользовательское соглашение📄</h2>
+                  marginBottom: 0}}>Пользовательское соглашение📄</h2>
           
         </div>
       </nav>
