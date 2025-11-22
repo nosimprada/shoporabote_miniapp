@@ -17,8 +17,8 @@ function TosHeader() {
                 />
             </div>
             <div className="container-fluid justify-content-center flex-wrap">
-            <span className='text-wrap fw-bold' style={{color: "var(--tg-theme-text-color)"}}>Пользовательское соглашение</span>
-            <i className="bi bi-info-square-fill" style={{color: "var(--tg-theme-text-color)", marginLeft: "8px"}}></i>
+            <span className='text-wrap fw-bold' style={{color: "var(--tg-theme-section-header-text-color)"}}>Пользовательское соглашение</span>
+            <i className="bi bi-info-square-fill" style={{color: "var(--tg-theme-section-header-text-color)", marginLeft: "8px"}}></i>
             </div>
         </nav>
     </div>
