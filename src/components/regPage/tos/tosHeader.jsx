@@ -1,16 +1,8 @@
 import React from "react";
 import {useEffect} from "react";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
-import { useTelegram } from "../../../hooks/useTelegram";
 
 function TosHeader() {
-    const { tg } = useTelegram();
-    useEffect(() => {
-        tg.expand();
-        tg.MainButton.show();
-        tg.setBottomBarColor(tg.themeParams.bg_color);
-    }, [tg]);
-
   return (
     <div>
         <nav className="navbar fixed-top" style={{
