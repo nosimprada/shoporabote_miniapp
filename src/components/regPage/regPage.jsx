@@ -1,10 +1,10 @@
 import React from "react";
-import TosContent from "./tos/tosContent";
+import TosMain from "./tos/tosMain";
 
 function RegPage() {
   return (
     <div>
-      <TosContent />
+      <TosMain />
     </div>
   );
 }

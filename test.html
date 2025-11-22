@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользовательское соглашение - Шо по работе</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: var(--tg-theme-secondary-bg-color, #f4f4f5);
+            padding: 20px 16px;
+            text-align: center;
+            border-bottom: 1px solid var(--tg-theme-hint-color, #e0e0e0);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .header-icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--tg-theme-text-color, #000);
+        }
+
+        .header-subtitle {
+            font-size: 0.9rem;
+            color: var(--tg-theme-hint-color, #999);
+            margin-top: 4px;
+        }
+
+        .content {
+            padding: 0 16px 100px 16px;
+        }
+
+        .card {
+            background-color: var(--tg-theme-secondary-bg-color, #f8f8f8);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .card-number {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--tg-theme-button-color, #3390ec);
+            color: var(--tg-theme-button-text-color, #fff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--tg-theme-text-color, #000);
+            flex: 1;
+        }
+
+        .card-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--tg-theme-text-color, #000);
+        }
+
+        .card-content p {
+            margin-bottom: 12px;
+        }
+
+        .info-block {
+            background-color: var(--tg-theme-bg-color, #fff);
+            border-left: 3px solid var(--tg-theme-link-color, #3390ec);
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+
+        .info-block strong {
+            color: var(--tg-theme-link-color, #3390ec);
+        }
+
+        .subsection {
+            margin-top: 16px;
+        }
+
+        .subsection-title {
+            font-weight: 600;
+            color: var(--tg-theme-subtitle-text-color, #707579);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-item {
+            padding: 10px 0 10px 28px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            border-bottom: 1px solid var(--tg-theme-section-separator-color, #e7e7e7);
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--tg-theme-button-color, #3390ec);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--tg-theme-section-separator-color, #e0e0e0);
+            margin: 24px 0;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--tg-theme-secondary-bg-color, #f4f4f5);
+            padding: 12px 16px;
+            border-top: 1px solid var(--tg-theme-hint-color, #e0e0e0);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: var(--tg-theme-hint-color, #999);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .btn-accept {
+            width: 100%;
+            background-color: var(--tg-theme-button-color, #3390ec);
+            color: var(--tg-theme-button-text-color, #fff);
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-accept:active {
+            opacity: 0.8;
+        }
+
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--tg-theme-button-color, #3390ec);
+            color: var(--tg-theme-button-text-color, #fff);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .card {
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">📋</div>
+        <div class="header-title">Пользовательское соглашение</div>
+        <div class="header-subtitle">Шо по работе</div>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">1</div>
+                <div class="card-title">Общие положения</div>
+            </div>
+            <div class="card-content">
+                <p>Настоящее пользовательское соглашение регулирует отношения между пользователем и сервисом «Шо по работе». Используя данное приложение, вы соглашаетесь с условиями, изложенными ниже. Соглашение вступает в силу с момента начала использования сервиса. Продолжая пользоваться приложением, вы подтверждаете, что полностью ознакомились с условиями и принимаете их без каких-либо оговорок.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">2</div>
+                <div class="card-title">Сбор данных</div>
+            </div>
+            <div class="card-content">
+                <p>Мы собираем и обрабатываем следующие данные: имя, контактную информацию и данные вашего профиля Telegram. Все данные используются исключительно для функционирования сервиса. Также мы можем собирать техническую информацию о вашем устройстве, включая версию операционной системы, модель устройства и уникальные идентификаторы для улучшения качества работы приложения.</p>
+                <div class="info-block">
+                    Данные хранятся на защищенных серверах и обрабатываются в соответствии с действующим законодательством о защите персональных данных.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">3</div>
+                <div class="card-title">Конфиденциальность</div>
+            </div>
+            <div class="card-content">
+                <p>Мы обязуемся не передавать ваши персональные данные третьим лицам без вашего согласия, за исключением случаев, предусмотренных законодательством. Ваши данные защищены современными методами шифрования.</p>
+                <div class="info-block">
+                    <strong>Гарантии безопасности:</strong> Мы применяем организационные и технические меры для предотвращения несанкционированного доступа, изменения, раскрытия или уничтожения ваших персональных данных. В случае утечки данных мы обязуемся незамедлительно уведомить вас и предпринять все необходимые меры для минимизации последствий.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">4</div>
+                <div class="card-title">Ответственность</div>
+            </div>
+            <div class="card-content">
+                <p>Пользователь несет ответственность за достоверность предоставленной информации. Сервис не несет ответственности за убытки, возникшие в результате использования приложения.</p>
+                <ul class="list">
+                    <li class="list-item">Использование сервиса только в законных целях</li>
+                    <li class="list-item">Не нарушать права других пользователей</li>
+                    <li class="list-item">Мы не гарантируем бесперебойную работу сервиса</li>
+                    <li class="list-item">Не несем ответственности за временные технические сбои</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">5</div>
+                <div class="card-title">Изменения условий</div>
+            </div>
+            <div class="card-content">
+                <p>Мы оставляем за собой право изменять условия настоящего соглашения. Продолжая использовать сервис после внесения изменений, вы соглашаетесь с новыми условиями.</p>
+                <p>О существенных изменениях в соглашении мы будем уведомлять вас через интерфейс приложения или другими доступными способами. Рекомендуем периодически проверять актуальную версию соглашения на предмет изменений.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">6</div>
+                <div class="card-title">Использование сервиса</div>
+            </div>
+            <div class="card-content">
+                <p>Вы получаете ограниченное, неисключительное, непередаваемое право на использование сервиса в личных некоммерческих целях.</p>
+                <div class="info-block">
+                    <strong>Запрещается:</strong> копировать, модифицировать, распространять или создавать производные работы на основе нашего сервиса без письменного разрешения. Мы оставляем за собой право приостановить или прекратить ваш доступ к сервису в случае нарушения условий соглашения.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">7</div>
+                <div class="card-title">Интеллектуальная собственность</div>
+            </div>
+            <div class="card-content">
+                <p>Все права интеллектуальной собственности на сервис, включая программное обеспечение, дизайн, логотипы, товарные знаки и контент, принадлежат нам или нашим лицензиарам.</p>
+                <p>Любое несанкционированное использование объектов интеллектуальной собственности строго запрещено и может повлечь за собой юридические последствия в соответствии с действующим законодательством.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">8</div>
+                <div class="card-title">Отказ от гарантий</div>
+            </div>
+            <div class="card-content">
+                <p>Сервис предоставляется «как есть» без каких-либо гарантий, явных или подразумеваемых. Мы не гарантируем, что сервис будет соответствовать вашим требованиям, работать без перерывов, быть безопасным или свободным от ошибок.</p>
+                <div class="info-block">
+                    Использование сервиса осуществляется на ваш собственный риск.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">9</div>
+                <div class="card-title">Ограничение ответственности</div>
+            </div>
+            <div class="card-content">
+                <p>В максимальной степени, разрешенной законом, мы не несем ответственности за любые прямые, косвенные, случайные, специальные или штрафные убытки, возникшие в результате использования или невозможности использования сервиса.</p>
+                <p>Наша общая ответственность перед вами не превышает суммы, уплаченной вами за использование сервиса за последние 12 месяцев.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">10</div>
+                <div class="card-title">Разрешение споров</div>
+            </div>
+            <div class="card-content">
+                <p>Любые споры, возникающие в связи с использованием сервиса, будут решаться путем переговоров. В случае невозможности достижения соглашения, спор подлежит рассмотрению в суде по месту нахождения правообладателя сервиса в соответствии с действующим законодательством.</p>
+                <p>Применимым правом является законодательство страны, в которой зарегистрирован правообладатель.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-number">11</div>
+                <div class="card-title">Контактная информация</div>
+            </div>
+            <div class="card-content">
+                <p>Если у вас возникли вопросы относительно настоящего соглашения или работы сервиса, вы можете связаться с нами через интерфейс приложения или по электронной почте.</p>
+                <div class="info-block">
+                    Мы стремимся отвечать на все обращения в течение <strong>3 рабочих дней</strong>. Ваши предложения и замечания помогают нам улучшать качество предоставляемых услуг.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-text">Обновлено: 17 ноября 2025 г.</div>
+        <button class="btn-accept" onclick="acceptTerms()">Принять и продолжить</button>
+    </div>
+
+    <script>
+        // Инициализация Telegram WebApp
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.ready();
+
+        function acceptTerms() {
+            tg.showAlert('Спасибо! Условия приняты.', () => {
+                tg.close();
+            });
+        }
+
+        // Применяем цвета темы Telegram
+        document.body.style.backgroundColor = tg.themeParams.bg_color || '#ffffff';
+        document.body.style.color = tg.themeParams.text_color || '#000000';
+    </script>
+</body>
+</html>
