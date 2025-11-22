@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import RegPage from './components/RegistrationPage';
+import RegPage from './components/regPage/regPage';
 
 function App() {
   return (
